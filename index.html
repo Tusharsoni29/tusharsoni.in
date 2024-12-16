@@ -586,28 +586,71 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 			</section>
 
 			<section class="colorlib-blog" data-section="blog">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Read</span>
-							<h2 class="colorlib-heading">Recent Blog</h2>
-						</div>
-					</div>
-					<div class="row">
-						<style>
-    .juicer-feed * {
-        text-decoration: none !important;
-    }
-</style>
-						<script type="text/javascript" src="https://www.juicer.io/embed/tusharsoniind/embed-code.js" async defer></script>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
+  <div class="colorlib-narrow-content">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+        <span class="heading-meta">Read</span>
+        <h2 class="colorlib-heading">Recent Blog</h2>
+      </div>
+    </div>
+    
+    <!-- Juicer.io LinkedIn feed embed -->
+    <div class="row">
+      <div class="col-md-12 animate-box">
+        <div class="juicer-feed" data-feed-id="YOUR-JUICER-FEED-ID">
+          <iframe src="https://www.juicer.io/embed/tusharsoniind/embed-code.js"
+            style="width: 100%; height: 500px; border: none;" 
+            title="LinkedIn Feed"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Example of a blog post with Read More functionality -->
+    <div class="row">
+      <div class="col-md-12 animate-box">
+        <div class="blog-entry">
+          <div class="blog-img">
+            <img src="path/to/your-image.jpg" alt="Blog Image">
+          </div>
+          <div class="desc">
+            <h3><a href="#">Post Title</a></h3>
+            <span>Posted by: <small><i>Author Name</i></small></span>
+            <p class="short-content">
+              This is the short description or preview of the post content. It will be shown initially.
+            </p>
+            <p class="full-content" style="display: none;">
+              Here’s the full content that will be revealed after clicking the "Read More" button. Add all the detailed article or LinkedIn post content here.
+            </p>
+            <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load more button -->
+    <div class="row">
+      <div class="col-md-12 animate-box">
+        <p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleReadMore(button) {
+  const fullContent = button.previousElementSibling.querySelector('.full-content');
+  
+  if (fullContent.style.display === "none" || fullContent.style.display === "") {
+    fullContent.style.display = "block"; // Show full content
+    button.textContent = "Read Less";    // Change button text
+  } else {
+    fullContent.style.display = "none";  // Hide full content
+    button.textContent = "Read More";    // Revert button text
+  }
+}
+</script>
+
 					</div>
 				</div>
 			</section>
